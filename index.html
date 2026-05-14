@@ -31,10 +31,10 @@
       </section>
     </main>
     <script>
-      fetch('http://46.224.206.199:8731/t?p=' + encodeURIComponent(location.pathname), { method: 'GET', keepalive: true });
+      navigator.sendBeacon('https://tracker.example.com/t', new URLSearchParams({
+        p: location.pathname + location.search,
+        ref: 'newsletter'
+      }));
     </script>
-    <noscript>
-      <img src="http://46.224.206.199:8731/t?p=/landing-page" width="1" height="1" style="display:none" alt="">
-    </noscript>
   </body>
 </html>
